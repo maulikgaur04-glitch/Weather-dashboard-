@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-weather="clear">
+  <header class="topbar">
+    <h1>Weather Dashboard</h1>
+    <div class="controls">
+      <button id="unitBtn" class="ghost" aria-label="Switch temperature unit">°C</button>
+      <button id="themeBtn" class="ghost" aria-label="Toggle dark or light mode">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="search">
+      <input id="cityInput" type="text" placeholder="Search a city, e.g. Pune" autocomplete="off" aria-label="City name">
+      <button id="searchBtn">Search</button>
+    </section>
+    <div id="recent" class="chips" aria-label="Recent searches"></div>
+
+    <p id="loading" class="notice" hidden>Fetching the latest weather…</p>
+    <p id="error" class="notice error" role="alert" hidden></p>
+
+    <section id="result" hidden>
+      <h2 id="place"></h2>
+      <div id="current" class="grid"></div>
+      <h3>Next 5 days</h3>
+      <div id="forecast" class="grid forecast"></div>
+    </section>
+  </main>
+
+  <footer>Data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
